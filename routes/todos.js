@@ -14,6 +14,10 @@ async function addTodo(req, res) {
     await todo.save()
 }
 
+async function deleteTodo(req, res) {
+    await TodoModel.findByIdAndDelete(req.body.id)
+}
+
 module.exports = {
-    getTodos, addTodo
+    getTodos, addTodo, deleteTodo
 }
